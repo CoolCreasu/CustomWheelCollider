@@ -1,3 +1,16 @@
 {
-	"name": "CustomWheelCollider.VehiclePhysics"
+    "name": "CustomWheelCollider.VehiclePhysics",
+    "rootNamespace": "",
+    "references": [
+        "GUID:ecffb5ada09d0044fa8f19a86c5a77c0"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }

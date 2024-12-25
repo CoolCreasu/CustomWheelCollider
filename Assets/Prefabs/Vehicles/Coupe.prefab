@@ -183,6 +183,7 @@ GameObject:
   - component: {fileID: 1129091690704484386}
   - component: {fileID: 8606195850932444070}
   - component: {fileID: 5048829517368328431}
+  - component: {fileID: 1102389631484124215}
   m_Layer: 0
   m_Name: Coupe
   m_TagString: Untagged
@@ -258,6 +259,70 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.9722058, y: 1.2185167, z: 4.6427183}
   m_Center: {x: 0, y: 0.802468, z: -0.01538527}
+--- !u!114 &1102389631484124215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351428404227695256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97e81e01b787150499f6862060e9d6db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wheelFL: {fileID: 7877680060460588586}
+  wheelFR: {fileID: 4481044416362735178}
+  wheelRL: {fileID: 4614243041360551100}
+  wheelRR: {fileID: 829556296069559298}
+  motorTorqueCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 2000
+      inSlope: -16
+      outSlope: -16
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 125
+      value: 0
+      inSlope: -16
+      outSlope: -16
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverseTorqueCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1000
+      inSlope: -20
+      outSlope: -20
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 50
+      value: 0
+      inSlope: -20
+      outSlope: -20
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &818037859394563133
 GameObject:
   m_ObjectHideFlags: 0
