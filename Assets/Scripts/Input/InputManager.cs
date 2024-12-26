@@ -38,6 +38,8 @@ namespace CustomWheelCollider.Input
         public float Brake { get; private set; } = 0.0f;
         public float Steering { get; private set; } = 0.0f;
         public float Handbrake { get; private set; } = 0.0f;
+        public bool ThrottleStarted { get; private set; } = false;
+        public bool BrakeStarted { get; private set; } = false;
 
         private void OnEnable()
         {
@@ -88,9 +90,11 @@ namespace CustomWheelCollider.Input
 
         private void SubscribeToInputEvents()
         {
+            inputActions.Gameplay.Throttle.started += OnThrottleStarted;
             inputActions.Gameplay.Throttle.performed += OnThrottlePerformed;
             inputActions.Gameplay.Throttle.canceled += OnThrottleCanceled;
 
+            inputActions.Gameplay.Brake.started += OnBrakeStarted;
             inputActions.Gameplay.Brake.performed += OnBrakePerformed;
             inputActions.Gameplay.Brake.canceled += OnBrakeCanceled;
 
@@ -116,9 +120,17 @@ namespace CustomWheelCollider.Input
             inputActions.Gameplay.Handbrake.canceled -= OnHandbrakeCanceled;
         }
 
+        private void Update()
+        {
+            if (ThrottleStarted) ThrottleStarted = false;
+            if (BrakeStarted) BrakeStarted = false;
+        }
+
+        private void OnThrottleStarted(InputAction.CallbackContext context) => ThrottleStarted = true;
         private void OnThrottlePerformed(InputAction.CallbackContext context) => Throttle = context.ReadValue<float>();
         private void OnThrottleCanceled(InputAction.CallbackContext context) => Throttle = 0.0f;
 
+        private void OnBrakeStarted(InputAction.CallbackContext context) => BrakeStarted = true;
         private void OnBrakePerformed(InputAction.CallbackContext context) => Brake = context.ReadValue<float>();
         private void OnBrakeCanceled(InputAction.CallbackContext context) => Brake = 0.0f;
 

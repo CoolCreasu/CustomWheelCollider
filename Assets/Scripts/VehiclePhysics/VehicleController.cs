@@ -66,7 +66,8 @@ namespace CustomWheelCollider.VehiclePhysics
 
                 case 0:
 
-                    if (previousBrakeInput == 0.0f && brakeInput > 0.0f)
+                    // This ensures the brake needs to be released and then pressed again to make the car go in reverse.
+                    if (InputManager.Instance.BrakeStarted)
                     {
                         driveDirection = -1;
                     }
